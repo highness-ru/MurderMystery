@@ -1,41 +1,51 @@
 import SwiftUI
 struct StoryView: View {
     @AppStorage("iSMusicOff") private var turnOffMusic = false
-    @State private var story = StoryViewModel()
+    @ObservedObject var story: StoryViewModel
     
     var body: some View {
-        GeometryReader { geo in
-            ZStack {
-                Image("Secondary_Menu")
-                    .resizable()
-                    .modifier(BackgroundStyle(width: geo.size.width, height: geo.size.height))
+        ZStack {
+            VStack(spacing: 10) {
+                VStack(alignment: .leading) {
+                    Text("Chapter \(story.currentScene.id+1): \(story.currentScene.name)")
+                        .modifier(TitleStyle())
+                }
                 
-                VStack(spacing: 10) {
-                    VStack(alignment: .leading, spacing: 16) {
-                        Text("Chapter \(story.currentScene.id+1): \(story.currentScene.name)")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .padding(15)
+                VStack {
+                    ScrollView(showsIndicators: true) {
+                        Text("\(story.currentScene.description)")
+                            .modifier(DescriptionStyle())
+                    }
+                }
+                .modifier(DescriptionBoxStyle())
+                
+                ForEach(story.currentScene.choices) { choice in
+                    Button {
+                        story.choose(choice)
+                    } label: {
+                        ButtonStyle1("\(choice.title)")
                     }
                     
-                    VStack {
-                        ScrollView {
-                            Text("\(story.currentScene.description)")
-                        }
-                        .modifier(DescriptionStyle())
+                }
+                
+            }
+            .screenBackground("Secondary_Menu")
+        }
+        .fullScreenCover(
+            isPresented: Binding(
+                get: {
+                    story.selectedConsequence != nil
+                },
+                set: { newValue in
+                    if newValue == false {
+                        story.continueAfterConsequence()
                     }
-                    .modifier(DescriptionBoxStyle(width: geo.size.width))
-                    
-                    ForEach(story.currentScene.choices) { choice in
-                        Button {
-                            story.choose(choice)
-                        } label: {
-                            MenuButtonText("\(choice.title)")
-                        }
-                        
-                    }
-                    
+                }
+            )
+        ) {
+            if let consequence = story.selectedConsequence {
+                ConsequenceView(text: consequence) {
+                    story.continueAfterConsequence()
                 }
             }
         }
@@ -52,10 +62,9 @@ struct StoryView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .ignoresSafeArea()
     }
 }
 
 #Preview {
-    StoryView()
+    StoryView(story: StoryViewModel())
 }

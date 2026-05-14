@@ -1,20 +1,15 @@
 import SwiftUI
 
-struct OptionsView: View {
+struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
     @AppStorage("iSMusicOff") private var turnOffMusic = false
     
     var body: some View {
-        GeometryReader { geo in
             ZStack {
-                Image("Secondary_Menu")
-                    .resizable()
-                    .modifier(BackgroundStyle(width: geo.size.width, height: geo.size.height))
-                
                 VStack(spacing: 24) {
                     
-                    VStack(alignment: .leading, spacing: 16) {
-                        Text("Options")
+                    VStack(alignment: .leading) {
+                        Text("Settings")
                             .modifier(TitleStyle())
                     }
                     VStack {
@@ -30,11 +25,11 @@ struct OptionsView: View {
                     Button {
                         dismiss()
                     } label: {
-                        MenuButtonText("Back to Main Menu")
+                        ButtonStyle2("Back to Main Menu")
                     }
                 }
+                .screenBackground("Secondary_Menu")
             }
-        }
         .onAppear {
             if !turnOffMusic {
                 AudioManager.shared.playBackgroundMusic(named: "Myuu-Fading")
@@ -54,5 +49,5 @@ struct OptionsView: View {
 
 
 #Preview {
-    OptionsView()
+    SettingsView()
 }

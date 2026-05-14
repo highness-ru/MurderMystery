@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-struct MenuButtonText: View {
+struct ButtonStyle1: View {
     let text: String
     
     init(_ text: String) {
@@ -10,10 +10,11 @@ struct MenuButtonText: View {
     
     var body: some View {
         Text(text)
-            .font(.headline)
+            .font(.subheadline)
             .foregroundColor(.white)
-            .frame(width: 240)
-            .padding(.vertical, 16)
+            .lineLimit(nil)
+            .frame(width: 300, height: 38)
+            .padding(.vertical, 5)
             .background(Color.black.opacity(0.75))
             .clipShape(RoundedRectangle(cornerRadius: 16))
     }

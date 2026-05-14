@@ -27,20 +27,20 @@ extension StoryScene {
             id: 0,
             name: "Arrival at Grey House",
             description: """
-                    You arrive at Grey House just after noon, though the storm has made the sky look like it is already evening. The old mansion has been converted into a private hotel and was about to open its doors to its first guests. However, it does not feel welcoming at all. You have the feeling that you are entering a tomb.
+                    You arrive at Grey House just after noon, though the storm has made the sky look like it is already evening. The old mansion has been converted into a private hotel and was about to open its doors to its first guests. However, the grand opening might be delayed as you were called to investigate a murder.
                     
-                    Rain beats ferociously against the windows. A nervous bell boy opens the door and nearly drops your suitcase when thunder shakes the hall. He tells you Lord Andrew Grey was found dead in his study less than two hours ago. The family is gathered inside, but nobody is allowed to leave until you have spoken to them.
+                    You are grateful when a nervous bellboy opens the door for you. As you watch water endlessly dripping from your coat, he tells you Lord Andrew Grey was found dead in his study less than two hours ago. The family is gathered inside, but nobody is allowed to leave until you have spoken to them.
                     
                     You decide to:
                     """,
             choices: [
                 StoryChoice(
                     id: 0,
-                    title: "Talk to the bell boy, Ivan",
+                    title: "Talk to the bellboy, Ivan",
                     consequence: """
                             Ivan says Lord Grey was still alive shortly after breakfast and had ordered that no one disturb him. According to him, Lord Grey seemed worried about something.
                             
-                            Ivan also says he saw a woman in a dark veil near the west corridor before the body was found, though he assumed it was one of the guests. He becomes frightened and stops talking when Edith Grey enters the hall and asks you to follow her.
+                            Ivan also says he saw a woman in a dark veil near the west corridor before the body was found, he suspects it could have been the Mourning Lady but doesn't offer any explanation, as he is interrupted when Edith Grey enters the hall and asks you to follow her.
                             """,
                     effects: StoryEffects(clues: 1),
                     nextSceneID: 1
@@ -49,11 +49,11 @@ extension StoryScene {
                     id: 1,
                     title: "Look around the entrance for clues",
                     consequence: """
-                            You notice muddy footprints near the door, but they clearly belong to several people. More interestingly, there is a faint smell of expensive rose perfume near the staircase, strangely out of place among the damp coats and old wood.
+                            You notice muddy footprints near the door, but they clearly belong to several people. 
                             
                             Before you can investigate further, Edith Grey approaches and asks you to follow her.
                             """,
-                    effects: StoryEffects(clues: 1),
+                    effects: StoryEffects(delay: 1),
                     nextSceneID: 1
                 )
             ]
@@ -63,11 +63,11 @@ extension StoryScene {
             id: 1,
             name: "Edith Grey's Welcome",
             description: """
-                    Edith Grey leads you through a corridor lined with portraits of dead family heads. Her long dark purple dress is spotless, her voice controlled. She says Lord Andrew Grey was a difficult man, but his death has shattered the household.
+                    Edith Grey leads you through a corridor lined with portraits of dead family heads. Her long dark purple dress is spotless, her voice controlled. She says Lord Andrew Grey had his flaws. He was strict, controlling, and often argued with his children, yet his death has shattered the entire household. Since the death of Charlie, Lord Grey's youngest son and Edith's husband, Grey House has been the only home left to her.
                     
-                    She claims she was in her sister-in-law room when the murder occurred, comforting Annie Grey. As she speaks, you notice she avoids looking toward the closed study door.
+                    She says she spent much of the late morning with Annie Grey, who had been frightened by the storm and by talk of the Mourning Lady. Edith briefly looks at the study door. When she turns back, her face is composed again, but her fingers have tightened around her sleeve.
                     
-                    She pauses and says, "Detective, I ask only that you spare this family unnecessary scandal."
+                    Before leading you onward, Edith quietly asks a maid to bring tea for Annie and the servants. "Nerves make people careless," she says.
                     
                     You decide to:
                     """,
@@ -78,7 +78,9 @@ extension StoryScene {
                     consequence: """
                             Edith says almost everyone in the house had reason to resent Lord Grey. Harry wanted money. Annie feared being disinherited. The servants feared dismissal.
                             
-                            She carefully avoids speaking about herself until you press her. Then she says Lord Grey treated her with perfect civility. Her answer feels polished, as if she prepared it before you arrived.
+                            She carefully avoids speaking about herself until you press her. Then she says Lord Grey was not cruel to her, exactly. He offered her home after Charlie died, and that sort of debt is difficult to speak of plainly.
+                            
+                            She gives the answer too smoothly, then looks annoyed with herself for doing so.
                             """,
                     effects: StoryEffects(clues: 1),
                     nextSceneID: 2
@@ -87,7 +89,9 @@ extension StoryScene {
                     id: 1,
                     title: "Remain silent and let Edith speak first",
                     consequence: """
-                            Edith fills the silence by explaining the family history. She speaks of old betrayals, disputes over the future hotel, and rumors that Grey House is cursed by the Mourning Lady. She also mentions the death of her husband - Charlie, Andrew's youngest son, and how it strained the relationships within the family.
+                            Edith fills the silence by explaining the family history. She speaks of old betrayals, disputes over the future hotel, and rumours that the Grey House is cursed by the Mourning Lady. She also mentions the death of her husband, Charlie, Andrew's youngest son. Since Charlie died, Edith has remained at Grey House as a widow dependent on Lord Grey's allowance.
+                            
+                            She says this dependence strained every relationship in the family.
                             
                             It is dramatic, but not especially useful. She seems relieved that you do not interrupt her.
                             """,
@@ -137,11 +141,11 @@ extension StoryScene {
             id: 3,
             name: "The Locked Door",
             description: """
-                    Mrs. Madison, the housekeeper, explains that Lord Grey's study door was locked when Edith called for help. Harry forced it open. The window was also locked.
+                    Mrs. Madison, the family cook, explains that Lord Grey's study door was locked when Edith called for help. Harry forced it open. The window was also locked.
                     
                     That is why some servants have started whispering that no living person could have killed him.
                     
-                    The old key is still in the lock, on the inside of the door.
+                    The old key is still in the lock, on the inside of the door. The door is warped enough to leave a narrow gap above the floorboards. Beneath it, the dust shows a few thin scratches, almost too neat to be accidental.
                     
                     You decide to:
                     """,
@@ -150,16 +154,16 @@ extension StoryScene {
                     id: 0,
                     title: "Inspect the lock and key",
                     consequence: """
-                            The key has scratches around its shaft. You realize it could have been turned from outside using a thin wire or a duplicate tool.
+                            The key has scratches around its shaft, and the marks beneath the door line up with the keyhole. Someone slid a thin wire or hooked tool through the gap beneath the door, caught the bow of the key, and turned it from the outside. It would not require strength, only patience and something narrow enough to bend.
                             
-                            The locked-room mystery was staged.
+                            The key was left inside deliberately. The locked-room mystery was staged.
                             """,
                     effects: StoryEffects(clues: 1),
                     nextSceneID: 4
                 ),
                 StoryChoice(
                     id: 1,
-                    title: "Ask Mrs. Madison about the ghost rumors",
+                    title: "Indulge Mrs. Madison's ghost rumours",
                     consequence: """
                             Mrs. Madison says the Mourning Lady appears before tragedy. She tells you a long story about a betrayed bride who died in the west tower.
                             
@@ -175,11 +179,13 @@ extension StoryScene {
             id: 4,
             name: "Harry Grey",
             description: """
-                    You find Harry Grey in the library, drinking whisky with shaking hands. He does not pretend to mourn. He almost seems... relieved?
+                    You find Harry Grey in the library, drinking whisky with shaking hands. He does not pretend to mourn. He almost seems relieved, and hates himself for it.
                     
                     He says his father was cruel, controlling, and enjoyed humiliating his children. Harry admits they argued that morning over money.
                     
-                    "He was going to cut me off, said I was a disgrace to the family ever since his favourite son, Charlie, died so young," Harry says, he shakes his head and looks away. "But I did not kill my father. I only wished him dead, which last time I checked is not a crime."
+                    There is a dark stain on one of his cuffs, and a shallow scratch across the back of his hand. When he notices you looking, he folds his arm across both too quickly.
+                    
+                    "He was going to cut me off," Harry mutters bitterly. "Said I was a disgrace to the family, especially after Charlie died and left this place full of widows and debts." He looks toward the study door, then away. "I hated him. I will not pretend otherwise."
                     
                     You decide to:
                     """,
@@ -188,9 +194,11 @@ extension StoryScene {
                     id: 0,
                     title: "Question Harry about the argument",
                     consequence: """
-                            Harry says Lord Grey planned to change his will that very evening. The solicitor was expected after the storm passed.
+                            Harry says Lord Grey planned to change his will that evening. The solicitor was expected after the storm passed.
                             
-                            Harry also says Edith visited Lord Grey shortly before the argument and left looking pale.
+                            When you ask about the stain and the scratch, Harry says both came from helping force open the study door and kneeling near the body. He sounds ashamed rather than frightened, but his explanation arrives a little too quickly.
+                            
+                            He also says someone visited Lord Grey shortly before the argument. Harry heard a woman's voice, but not clearly enough to name it. In this house, he says, everyone whispers when money is mentioned.
                             """,
                     effects: StoryEffects(clues: 1),
                     nextSceneID: 5
@@ -213,7 +221,7 @@ extension StoryScene {
             id: 5,
             name: "Annie's Fear",
             description: """
-                    Annie Grey is found in the music room, sitting at the piano without playing. She says she heard raised voices in the study before the murder, but she cannot say whose voices they were.
+                    Annie Grey, Lord Grey's anxious daughter, is found in the music room, sitting at the piano without playing. She says she heard raised voices in the study before the murder, but she cannot say whose voices they were.
                     
                     She keeps glancing toward the dark hallway that leads to the west wing.
                     
@@ -228,14 +236,18 @@ extension StoryScene {
                     consequence: """
                             Annie admits she heard Lord Grey say, "You will not bleed this family any longer."
                             
-                            Then she heard a woman answer, but the voice was low and controlled. Annie thought it might have been Edith, but she was too frightened to say so.
+                            Then she heard a woman answer, but the voice was low and controlled. Annie thought it sounded familiar, then doubted herself at once. The storm was loud and she was too scared to listen attentively.
+                            
+                            During the confusion after the alarm was raised, a calm voice told Annie not to repeat uncertain things in a house already half-mad with fear. Annie cannot remember the exact words now, only that obedience felt safer than doubt.
+                            
+                            Annie looks ashamed when she admits this. "I think I wanted to convince myself it was a ghost," her voice falters. "Because I was scared it wasn't."
                             """,
                     effects: StoryEffects(clues: 1),
                     nextSceneID: 6
                 ),
                 StoryChoice(
                     id: 1,
-                    title: "Encourage Annie to talk about the Mourning Lady",
+                    title: "Focus on the Mourning Lady",
                     consequence: """
                             Annie tells you the ghost appears as a woman in black with a torn veil. She says the same figure was seen near the west corridor.
                             
@@ -251,7 +263,7 @@ extension StoryScene {
             id: 6,
             name: "The Servants' Corridor",
             description: """
-                    The servants' corridor runs behind the study and connects to the kitchen, laundry, and old service stairs. It is narrow, badly lit, and rarely used by family members or infrequent guests.
+                    The servants' corridor runs behind the study and connects to the kitchen, laundry, and old service stairs. It is narrow, badly lit, and rarely used by family members or visitors.
                     
                     You find Ivan there, arguing quietly with a maid. When he sees you, he goes pale.
                     
@@ -266,7 +278,7 @@ extension StoryScene {
                     consequence: """
                             Ivan admits he found a torn black veil in the laundry basket and threw it behind the boiler because he feared being blamed.
                             
-                            He thought it belonged to the ghost costume used for old hotel theatricals.
+                            He thought it belonged to the old costumes kept for family theatricals.
                             """,
                     effects: StoryEffects(clues: 1),
                     nextSceneID: 7
@@ -279,7 +291,7 @@ extension StoryScene {
                             
                             It proves someone could impersonate the Mourning Lady, but you miss Ivan's more specific evidence.
                             """,
-                    effects: StoryEffects(clues: 1, delay: 1),
+                    effects: StoryEffects(delay: 1),
                     nextSceneID: 7
                 )
             ]
@@ -291,9 +303,7 @@ extension StoryScene {
             description: """
                     The laundry room is hot, damp, and full of steam. Behind the boiler, you find a torn black veil. Its edge matches the scrap clenched in Lord Grey's hand.
                     
-                    It smells faintly of rose perfume.
-                    
-                    A maid tells you Edith often sends her mourning clothes here separately and insists they be washed by hand.
+                    A maid tells you some of the household’s mourning clothes are washed separately by hand, especially the finer garments.
                     
                     You decide to:
                     """,
@@ -302,9 +312,9 @@ extension StoryScene {
                     id: 0,
                     title: "Keep the veil as evidence and question the maid",
                     consequence: """
-                            The maid says Edith returned from the west corridor after the murder alarm was raised, even though Edith claimed she had been in the morning room the whole time.
+                            The maid says she saw a woman in dark mourning clothes come from the direction of the west corridor after the alarm was raised.
                             
-                            The maid is afraid to testify, but gives you the details.
+                            She cannot swear it was Edith. The hallway was dim, and everyone in Grey House seems to own black cloth. But she remembers the woman adjusting one sleeve as if hiding a tear.
                             """,
                     effects: StoryEffects(clues: 1),
                     nextSceneID: 8
@@ -315,7 +325,7 @@ extension StoryScene {
                     consequence: """
                             Edith looks at it for only a second before saying many women in the house own black veils.
                             
-                            Her composure barely changes, but she quickly asks whether Harry has been questioned. Is she trying to redirect suspicion?
+                            Her composure barely changes, but she quickly asks whether Harry has been questioned. The question is reasonable. Its timing is less so.
                             """,
                     effects: StoryEffects(clues: 1, delay: 1),
                     nextSceneID: 8
@@ -325,7 +335,7 @@ extension StoryScene {
         
         StoryScene(
             id: 8,
-            name: "Dr. Engelson's Examination",
+            name: "Doctor's Examination",
             description: """
                     Dr. Engelson arrives after being delayed by the storm. He examines the body with clinical detachment.
                     
@@ -340,9 +350,9 @@ extension StoryScene {
                     id: 0,
                     title: "Ask whether the bronze statue was truly the weapon",
                     consequence: """
-                            Dr. Engelson says the statue is too clean on one side and too heavily bloodied on the other.
+                            Dr. Engelson says the statue is almost certainly the weapon, but not where it was found. One side is too clean, the other too heavily bloodied.
                             
-                            It was probably used, but moved afterward. The murderer staged the room to make the attack seem more chaotic than it was.
+                            Lord Grey was struck near the desk. Afterward, the murderer moved the statue toward the fireplace to make the room look more chaotic.
                             """,
                     effects: StoryEffects(clues: 1),
                     nextSceneID: 9
@@ -367,20 +377,20 @@ extension StoryScene {
             description: """
                     You return to the study and search Lord Grey's desk more carefully. Inside a hidden drawer, you find an envelope addressed to his solicitor.
                     
-                    The letter inside says Lord Grey intended to remove Edith's access to family funds and expose debts paid secretly from the hotel accounts.
+                    The unfinished letter says Lord Grey intended to alter his will, end a widow's allowance paid from the family accounts, and expose debts that had been quietly settled in the name of Grey House.
                     
-                    The letter is unsigned, but the meaning is clear: Edith had a motive.
+                    The final amendment itself is gone. Whoever burned it did not merely fear inheritance changing hands. They feared being named.
                     
                     You decide to:
                     """,
             choices: [
                 StoryChoice(
                     id: 0,
-                    title: "Search for proof that Edith knew about the letter",
+                    title: "Examine the envelope and broken seal",
                     consequence: """
-                            You find a broken piece of red sealing wax on the desk and remember the wax near the fireplace.
+                            You find a broken piece of red sealing wax on the desk and remember the matching wax near the fireplace.
                             
-                            The seal on the envelope was broken before Lord Grey died. Someone read it, panicked, and burned the will amendment.
+                            The envelope was opened before Lord Grey died. Someone had read enough to know what the amendment would expose, then destroyed the part that mattered most. Whoever killed him was not acting blindly. They knew exactly what they were trying to erase.
                             """,
                     effects: StoryEffects(clues: 1),
                     nextSceneID: 10
@@ -405,9 +415,9 @@ extension StoryScene {
             description: """
                     The storm worsens. The bridge road has started to flood, and the local constable warns that if the killer tries to flee tonight, there may be only one safe route left: the old carriage road through the woods.
                     
-                    You have enough suspicion to continue, but the household is exhausted.
+                    You have enough reason to continue, but the household is exhausted, and several witnesses have begun contradicting themselves.
                     
-                    Edith suggests postponing the investigation until morning.
+                    Edith quietly suggests postponing the investigation until morning. Harry is drunk with rage, Annie can barely speak, and the servants have begun repeating one another's fears as facts. Edith insists that another hour of panic will only produce a false confession or a false accusation.
                     
                     You decide to:
                     """,
@@ -425,9 +435,9 @@ extension StoryScene {
                     id: 1,
                     title: "End the investigation for the night",
                     consequence: """
-                            You accept Edith's suggestion and allow the household to retire.
+                            You accept Edith's suggestion and allow the household to retire. Ivan claims he is too worried to sleep, so he offers to watch the door.
                             
-                            By morning, the veil, the sealing wax, and Edith herself are gone.
+                            By morning, you find him slumped beside it, sick and ashamed. Edith had brought him chamomile tea, he says, to help him stay awake. The watch failed. The veil, the sealing wax, and Edith herself are gone.
                             """,
                     effects: StoryEffects(delay: 2),
                     nextSceneID: 102
@@ -441,9 +451,7 @@ extension StoryScene {
             description: """
                     The west wing is abandoned, used only for storage and old guest rooms. Dust covers the floor, except for a narrow path of fresh footprints.
                     
-                    At the end of the corridor, an old door leads to the service stairs, which connect to the servants' corridor near the study.
-                    
-                    You also find a faint smear of rose-scented hand cream on the banister.
+                    At the end of the corridor, an old door leads to the service stairs. From there, a person could reach the servants' corridor behind the study without crossing the main hall.
                     
                     You decide to:
                     """,
@@ -463,7 +471,7 @@ extension StoryScene {
                     id: 1,
                     title: "Search the old guest rooms for the ghost",
                     consequence: """
-                            You find old guest books, cracked mirrors, and theatrical costumes from a hotel masquerade night years ago.
+                            You find old guest books, cracked mirrors, and theatrical costumes from a family masquerade held years ago.
                             
                             The atmosphere is frightening, but the search costs time and reveals little beyond confirming the ghost story can be faked.
                             """,
@@ -477,11 +485,11 @@ extension StoryScene {
             id: 12,
             name: "Mrs. Madison's Secret",
             description: """
-                    Mrs. Madison finally admits she has served the Grey family for thirty years and knows better than to believe every respectable face.
+                    You talk to the family cook again. Mrs. Madison stiffly says that she had served the Grey family for thirty years and knows better than to believe every respectable face.
                     
-                    She tells you Lord Grey had summoned Edith to the study that morning. He had discovered missing hotel funds.
+                    She tells you Lord Grey had summoned Edith to the study that morning. He had discovered irregularities in the family accounts and wanted answers before the hotel opened.
                     
-                    She says she did not speak earlier because Edith promised to protect the servants if the soon-to-be hotel changed hands.
+                    Edith later warned the servants not to repeat anything they had heard. She said scandal would ruin Grey House before its first guests arrived. Mrs. Madison claims it sounded like concern for the household, but she has wondered since whether it was concern for herself.
                     
                     You decide to:
                     """,
@@ -503,9 +511,11 @@ extension StoryScene {
                     consequence: """
                             Mrs. Madison says Harry shouted often but was cowardly when truly challenged.
                             
-                            He argued with his father, yes, but she doubts he had the nerve to kill him. This helps remove Harry as the killer, but does not directly trap Edith.
+                            He argued with his father, yes, and he did help break open the study door afterward. That may explain the stain on his cuff and the scratch on his hand. But Mrs. Madison says Harry is loudest when he is safest, and quietest when truly afraid.
+                            
+                            This helps weaken the case against Harry, but it does not directly trap Edith.
                             """,
-                    effects: StoryEffects(clues: 1, delay: 1),
+                    effects: StoryEffects(delay: 1),
                     nextSceneID: 13
                 )
             ]
@@ -517,9 +527,9 @@ extension StoryScene {
             description: """
                     You search Edith's room with Mrs. Madison as witness. The room is immaculate. Too immaculate.
                     
-                    Her writing desk has been cleared, her fireplace recently swept, and her travel case lies open beneath the bed.
+                    Her writing desk has been cleared, her fireplace recently swept, and you can see the corner of a travel case peeking from beneath the bed.
                     
-                    Inside the case, you find gloves, money, and a timetable for the evening mail coach that stops near the old carriage road.
+                    Inside the case, you find a pair of gloves, money, and a timetable for the evening mail coach that stops near the old carriage road.
                     
                     You decide to:
                     """,
@@ -530,7 +540,9 @@ extension StoryScene {
                     consequence: """
                             In the ashes, you find a half-burned note from a creditor threatening to expose Edith's debt.
                             
-                            You also find red sealing wax matching the wax in Lord Grey's study.
+                            Beneath a stack of letters in the drawer, you also find a thin bent wire, blackened near one end as if it had been hastily passed through ash.
+                            
+                            It is exactly the sort of tool that could have turned the study key from the outside.
                             """,
                     effects: StoryEffects(clues: 1),
                     nextSceneID: 14
@@ -539,9 +551,9 @@ extension StoryScene {
                     id: 1,
                     title: "Search the travel case and wardrobe",
                     consequence: """
-                            You find a mourning dress with a missing strip of black fabric at the sleeve.
+                            You find a mourning dress folded beneath ordinary travelling clothes. One sleeve has been carefully mended, the stitches fresh and uneven.
                             
-                            The torn edge resembles the scrap from Lord Grey's hand. Edith was preparing to flee.
+                            You cannot prove from the dress alone that it was worn in the study, but the repair sits exactly where the maid remembered seeing a woman hide her sleeve. Beside it lies money, a small travelling case, and a timetable for the evening mail coach.
                             """,
                     effects: StoryEffects(clues: 1),
                     nextSceneID: 14
@@ -562,18 +574,18 @@ extension StoryScene {
             choices: [
                 StoryChoice(
                     id: 0,
-                    title: "Accuse Edith Grey",
+                    title: "Accuse the widow",
                     consequence: """
-                            You explain the staged locked room, the burned will, the torn veil, the rose perfume, the service stairs, and Edith's plan to flee.
+                            You name Edith Grey and begin laying out the evidence. For the first time, the room itself seems to hold its breath.
                             
-                            Edith's expression remains calm until Ivan mentions seeing the veiled woman near the west corridor. Then she breaks and reaches for the door.
+                            At the mention of the torn veil, the west corridor, and the false locked room, Edith's eyes move toward the servants' passage.
                             """,
                     effects: StoryEffects(),
                     nextSceneID: nil
                 ),
                 StoryChoice(
                     id: 1,
-                    title: "Accuse Harry Grey or blame the Mourning Lady",
+                    title: "Accuse the heir",
                     consequence: """
                             The household erupts. Harry denies everything, and Edith uses the confusion to vanish through the servants' passage.
                             
@@ -589,11 +601,13 @@ extension StoryScene {
             id: 100,
             name: "The Culprit Caught",
             description: """
-                    You accuse Edith Grey in the great hall and lay out the evidence piece by piece. The torn veil. The burned will. The staged lock. The rose perfume. The west-wing passage. The travel case hidden beneath her bed.
+                    You accuse Edith Grey in the great hall and lay out the evidence piece by piece. The torn veil. The burned will. The staged lock. The west-wing passage. The travel case hidden beneath her bed.
                     
-                    Edith tries to remain dignified, but when Ivan confirms he saw her near the west corridor, she loses control and attempts to flee. You stop her before she reaches the servants' stairs. The constable arrests her as dawn breaks through the storm clouds.
+                    Edith tries to remain dignified, but the evidence leaves her less room with every word. The torn veil places the disguise in the house. The broken seal places her before the burned will. The bent wire destroys the miracle of the locked room. She reaches for the servants' passage, only to find you already watching it.
                     
-                    Lord Grey was murdered not by a ghost, nor by the obvious heir, but by someone who feared exposure more than death itself.
+                    The constable takes Edith away just after six. The rain has stopped, but the hall still smells of damp wool and smoke.
+                    
+                    Later, the case seems simpler than it felt inside Grey House. Harry had made himself easy to suspect. Edith had made herself easy to overlook. The truth was colder: Edith Grey wanted to preserve the position Charlie's death had left her, used family money recklessly and killed when threatened to be exposed.
                     
                     The truth is recorded. Grey House will never fully recover, but justice arrives before the killer can escape.
                     """,
@@ -604,11 +618,11 @@ extension StoryScene {
             id: 101,
             name: "The Truth Too Late",
             description: """
-                    You accuse Edith Grey, and the evidence is strong enough to expose her. The household falls silent as each detail connects: the veil, the will, the rose perfume, and the false locked room.
+                    You accuse Edith Grey, and the evidence is strong enough to expose her. The household falls silent as each detail connects: the veil, the will, and the false locked room.
                     
-                    But you spent too long chasing ghost stories, family grudges, and useless gossip. Edith has already prepared her escape.
+                    But you spent too long chasing ghost stories, family grudges, and useless gossip. Each delay gave Edith another moment to prepare her escape.
                     
-                    As you speak, she slips away during a moment of panic. By the time you reach her room, the travel case is gone. By the time you reach the carriage road, only wheel tracks remain in the mud.
+                    Before you can finish, a shout from the servants' corridor breaks the room into panic. Edith uses the confusion to slip away. By the time you reach her room, the travel case is gone. By the time you reach the carriage road, only wheel tracks remain in the mud.
                     
                     You know the truth. You can prove the truth. But Edith Grey is gone.
                     """,
@@ -621,11 +635,11 @@ extension StoryScene {
             description: """
                     The investigation collapses beneath suspicion and superstition. Perhaps Harry looked too guilty. Perhaps the Mourning Lady seemed too real. Perhaps the evidence was there, but you left it scattered in dark rooms and frightened conversations.
                     
-                    By morning, Edith Grey is gone. The burned papers are destroyed completely. The torn veil disappears. The servants change their stories. Harry becomes the family scandal, Annie retreats into silence, and the Grey House gains one more ghost story.
+                    By next morning, Edith Grey is gone. The burned papers are destroyed completely. The torn veil disappears. The servants change their stories. Harry becomes the family scandal, Annie retreats into silence, and Grey House gains one more ghost story.
                     
-                    The official report names no murderer.
+                    The official report circles Harry's name without ever proving the case. Even years later, drunk villagers at the nearby tavern still argue over who killed Lord Grey and why.
                     
-                    Years later, guests still whisper that Lord Grey was killed by the Mourning Lady. Only you know the truth may have been human, ordinary, and real enough to touch.
+                    Only one truth remains certain: whatever killed Lord Grey was human, ordinary, and real enough to touch.
                     """,
             choices: []
         )

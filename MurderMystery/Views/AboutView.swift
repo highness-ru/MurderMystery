@@ -6,45 +6,40 @@ struct AboutView: View {
     @AppStorage("iSMusicOff") private var turnOffMusic = false
     
     var body: some View {
-        GeometryReader { geo in
             ZStack {
-                Image("Secondary_Menu")
-                    .resizable()
-                    .modifier(BackgroundStyle(width: geo.size.width, height: geo.size.height))
-                
                 VStack(spacing: 24) {
                     
-                    VStack(alignment: .leading, spacing: 16) {
-                        Text("About")
+                    VStack(alignment: .leading) {
+                        Text("About Game")
                             .modifier(TitleStyle())
                     }
                     
-                    ScrollView {
+                    ScrollView(showsIndicators: true) {
                         Text("""
                                 This is a detective game where you play as a detective investigating a murder in an old mansion.
                                 
                                 During the game, you can choose between two options to see how the story unfolds.
                                 
-                                Choose wisely. Some choices can end the investigation early.
+                                Choose wisely. Some choices can end the investigation early. There are several endings depending on the choices you make.
                                 
-                                There are several endings depending on the choices you make.
+                                If you see a box like this, it is scrollable, so make sure you scroll it before you continue to catch all important details.
                                 
-                                Good luck.
+                                Good luck!
                                 """)
                         .modifier(DescriptionStyle())
                         
                     }
-                    .modifier(DescriptionBoxStyle(width: geo.size.width))
+                    .modifier(DescriptionBoxStyle())
                     
                     
                     Button {
                         dismiss()
                     } label: {
-                        MenuButtonText("Back to Main Menu")
+                        ButtonStyle2("Back to Main Menu")
                     }
                 }
+                .screenBackground("Secondary_Menu")
             }
-        }
         .onAppear {
             if !turnOffMusic {
                 AudioManager.shared.playBackgroundMusic(named: "Myuu-Fading")
@@ -58,7 +53,6 @@ struct AboutView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .ignoresSafeArea()
         
     }
 }

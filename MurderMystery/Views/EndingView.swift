@@ -2,37 +2,37 @@ import SwiftUI
 
 struct EndingView: View {
     @AppStorage("iSMusicOff") private var turnOffMusic = false
-    @State private var story = StoryViewModel()
+    @ObservedObject var story: StoryViewModel
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        GeometryReader { geo in
             ZStack {
-                Image("Secondary_Menu")
-                    .resizable()
-                    .modifier(BackgroundStyle(width: geo.size.width, height: geo.size.height))
-                
-                VStack(spacing: 24) {
+                VStack(spacing: 10) {
                     
-                    VStack(alignment: .leading, spacing: 16) {
-                        Text("\(story.currentScene.name)")
+                    VStack(alignment: .leading) {
+                        Text("Epilogue: \(story.currentScene.name)")
                             .modifier(TitleStyle())
                     }
-                        ScrollView {
-                            Text("""
+                    ScrollView(showsIndicators: true) {
+                        Text("""
                                 \(story.currentScene.description)
                                 """)
-                            .modifier(DescriptionStyle())
-                        }
-                        .modifier(DescriptionBoxStyle(width: geo.size.width))
-                        
-                        Button {
-                            dismiss()
-                        } label: {
-                            MenuButtonText("Back to Main Menu")
-                        }
+                        .modifier(DescriptionStyle())
+                    }
+                    .modifier(DescriptionBoxStyle())
+                    
+                    Button {
+                        story.restart()
+                    } label: {
+                        ButtonStyle2("Restart Investigation")
+                    }
+                    Button {
+                        dismiss()
+                    } label: {
+                        ButtonStyle2("Go to Main Menu")
                     }
                 }
+                .screenBackground("Secondary_Menu")
             }
         .onAppear {
             if !turnOffMusic {
@@ -47,10 +47,9 @@ struct EndingView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .ignoresSafeArea()
     }
 }
 
 #Preview {
-    EndingView()
+    EndingView(story: StoryViewModel())
 }

@@ -5,9 +5,9 @@ struct GameView: View {
     
     var body: some View {
         if story.isEnding {
-            EndingView()
+            EndingView(story: story)
         } else {
-            StoryView()
+            StoryView(story: story)
         }
     }
 }

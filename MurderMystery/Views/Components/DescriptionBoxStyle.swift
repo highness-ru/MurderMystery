@@ -1,14 +1,25 @@
 import SwiftUI
 
 struct DescriptionBoxStyle: ViewModifier {
-    let width: CGFloat
+    var height: CGFloat = 550
+    var maxWidth: CGFloat = 680
     
     func body(content: Content) -> some View {
+        GeometryReader { geo in
+            let isWideLayout = geo.size.width >= 700
+            let boxWidth = isWideLayout
+            ? min(geo.size.width * 0.62, maxWidth)
+            : geo.size.width - 48
+            
+            let boxHeight = isWideLayout ? 300 : height
+            
             content
-                .padding(22)
-                .frame(width: width - 48)
-                .frame(maxHeight: 550)
+                .padding(isWideLayout ? 28 : 22)
+                .frame(width: boxWidth, height: boxHeight)
                 .background(Color.black.opacity(0.72))
                 .clipShape(RoundedRectangle(cornerRadius: 20))
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+        .frame(height: height)
     }
+}

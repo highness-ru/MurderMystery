@@ -11,32 +11,32 @@ struct MainMenuView: View {
                 .scaledToFill()
                 .ignoresSafeArea()
             
-            VStack(spacing: 16) {
+            VStack(spacing: 24) {
                 Text("Murder Mystery")
                     .modifier(TitleStyle())
                 
                 NavigationLink {
                     GameView()
                 } label: {
-                    MenuButtonText("New Game")
+                    ButtonStyle2("New Game")
                 }
                 
                 NavigationLink {
                     AboutView()
                 } label: {
-                    MenuButtonText("About Game")
+                    ButtonStyle2("About Game")
                 }
                 
                 NavigationLink {
-                    OptionsView()
+                    SettingsView()
                 } label: {
-                    MenuButtonText("Options")
+                    ButtonStyle2("Settings")
                 }
                 
                 NavigationLink {
                     CreditsView()
                 } label: {
-                    MenuButtonText("Credits")
+                    ButtonStyle2("Credits")
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
