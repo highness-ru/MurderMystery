@@ -19,7 +19,7 @@ struct StoryView: View {
                 }
                 .modifier(DescriptionBoxStyle())
                 
-                ForEach(story.currentScene.choices) { choice in
+                ForEach(story.currentScene.choices.shuffled()) { choice in
                     Button {
                         story.choose(choice)
                     } label: {
