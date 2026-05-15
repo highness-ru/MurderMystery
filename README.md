@@ -96,6 +96,13 @@ Music and sound effects:
 - Work on the overall plot to make it more interesting and less rushed
 - Add voiceover
 
+## What I learned
+## What I worked on independently
+
+This is my first personal iOS project built without step-by-step tutorial guidance. I planned the story structure, designed the investigation flow, wrote the plot, chose the atmosphere and music direction, and built the app screens in SwiftUI.
+
+The project helped me practise turning an idea into a working iOS app, making product decisions, and thinking about player choices, state, and consequences.
+
 ## Author
 
 Created by highness-ru
