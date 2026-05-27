@@ -2,6 +2,7 @@ import SwiftUI
 struct StoryView: View {
     @AppStorage("iSMusicOff") private var turnOffMusic = false
     @ObservedObject var story: StoryViewModel
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         ZStack {
@@ -47,6 +48,9 @@ struct StoryView: View {
                 NavigationStack {
                     ConsequenceView(text: consequence) {
                         story.continueAfterConsequence()
+                    } onMainMenu: {
+                        story.selectedConsequence = nil
+                        dismiss()
                     }
                 }
             }

@@ -1,14 +1,14 @@
 import SwiftUI
 struct ConsequenceView: View {
     @AppStorage("iSMusicOff") private var turnOffMusic = false
-    @State private var story = StoryViewModel()
     let text: String
     let onContinue: () -> Void
+    let onMainMenu: () -> Void
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         ZStack {
-            VStack(spacing: 24) {
+            VStack(spacing: 10) {
                 VStack(alignment: .leading) {
                     Text("Your decision led to the following outcome: ")
                         .modifier(TitleStyle())
@@ -32,6 +32,11 @@ struct ConsequenceView: View {
                 } label: {
                     ButtonStyle2("Pause Investigation")
                 }
+                Button {
+                    onMainMenu()
+                } label: {
+                    ButtonStyle2("Go to Main Menu")
+                }
                 
             }
             .screenBackground("Secondary_Menu")
@@ -49,6 +54,6 @@ struct ConsequenceView: View {
         
         He becomes frightened and stops talking when Edith Grey enters the hall.
         """,
-                        onContinue: {})
+                        onContinue: {}, onMainMenu: {})
     }
 }
