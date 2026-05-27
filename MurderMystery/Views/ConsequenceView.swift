@@ -4,6 +4,7 @@ struct ConsequenceView: View {
     @State private var story = StoryViewModel()
     let text: String
     let onContinue: () -> Void
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         ZStack {
@@ -26,6 +27,11 @@ struct ConsequenceView: View {
                 } label: {
                     ButtonStyle2("Continue Investigation")
                 }
+                NavigationLink {
+                    SettingsView()
+                } label: {
+                    ButtonStyle2("Pause Investigation")
+                }
                 
             }
             .screenBackground("Secondary_Menu")
@@ -35,12 +41,14 @@ struct ConsequenceView: View {
 }
 
 #Preview {
-    ConsequenceView(text: """
+    NavigationStack {
+        ConsequenceView(text: """
         Ivan says Lord Grey was still alive shortly after breakfast and had ordered that no one disturb him.
         
         He also says he saw a woman in a dark veil near the west corridor before the body was found, though he assumed it was one of the guests.
         
         He becomes frightened and stops talking when Edith Grey enters the hall.
         """,
-                    onContinue: {})
+                        onContinue: {})
+    }
 }

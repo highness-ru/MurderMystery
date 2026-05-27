@@ -44,8 +44,10 @@ struct StoryView: View {
             )
         ) {
             if let consequence = story.selectedConsequence {
-                ConsequenceView(text: consequence) {
-                    story.continueAfterConsequence()
+                NavigationStack {
+                    ConsequenceView(text: consequence) {
+                        story.continueAfterConsequence()
+                    }
                 }
             }
         }

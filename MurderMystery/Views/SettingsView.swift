@@ -25,7 +25,7 @@ struct SettingsView: View {
                     Button {
                         dismiss()
                     } label: {
-                        ButtonStyle2("Back to Main Menu")
+                        ButtonStyle2("Go Back")
                     }
                 }
                 .screenBackground("Secondary_Menu")
