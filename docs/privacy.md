@@ -1,6 +1,6 @@
 # Privacy Policy — Murder Mystery
 
-Last updated: [11/08/2026]
+Last updated: 11 August 2026
 
 Murder Mystery does not collect, transmit, store, sell, or share personal
 information.
