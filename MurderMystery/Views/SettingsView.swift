@@ -22,7 +22,7 @@ struct SettingsView: View {
                     .background(Color.black.opacity(0.72))
                     
                     Link(
-                        "Privacy Policy",
+                        "Privacy Policy & Support",
                         destination: URL(
                             string: "https://highness-ru.github.io/MurderMystery/privacy"
                         )!
