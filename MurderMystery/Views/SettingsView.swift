@@ -21,6 +21,18 @@ struct SettingsView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(Color.black.opacity(0.72))
                     
+                    Link(
+                        "Privacy Policy",
+                        destination: URL(
+                            string: "https://highness-ru.github.io/MurderMystery/privacy"
+                        )!
+                    )
+                    .modifier(DescriptionStyle())
+                    .frame(alignment: .center)
+                    .background {
+                        RoundedRectangle(cornerRadius: 40)
+                            .fill(Color.black.opacity(0.72))
+                    }
                     
                     Button {
                         dismiss()
