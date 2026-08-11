@@ -80,6 +80,10 @@ Art:
 
 - Main Menu and Secondary Menu background art: Fylgjur (https://www.deviantart.com/cospigeon)
 
+App Icon:
+- “Spooky house” icon by Delapouite, from Game-icons.net.
+- Licensed under CC BY 3.0. Modified for use in Murder Mystery.
+
 Music and sound effects:
 
 - "Darkest Night", "Disintegrating", "Fading" by Myuu
