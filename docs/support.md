@@ -3,6 +3,8 @@
 If you experience a problem with Murder Mystery, please report it through
 the project's GitHub Issues page.
 
+[Report an issue on GitHub](https://github.com/highness-ru/MurderMystery/issues)
+
 When reporting a problem, please include:
 - your iPhone or iPad model
 - your iOS version
@@ -12,4 +14,3 @@ When reporting a problem, please include:
 - any additional details you feel may help me resolve the issue
 
 Developer: highness-ru
-GitHub: highness-ru/MurderMystery
