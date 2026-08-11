@@ -13,4 +13,6 @@ When reporting a problem, please include:
 - video recording of the issue
 - any additional details you feel may help me resolve the issue
 
-Developer: highness-ru
+Alternatively, you can contact me at:
+
+Email: highnessru.games@proton.me
