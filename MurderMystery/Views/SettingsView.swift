@@ -55,6 +55,7 @@ struct SettingsView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .statusBarHidden(true)
         .ignoresSafeArea()
     }
 }

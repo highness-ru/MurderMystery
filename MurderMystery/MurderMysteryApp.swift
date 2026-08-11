@@ -7,6 +7,7 @@ struct MurderMysteryApp: App {
             NavigationStack {
                 MainMenuView()
             }
+            .statusBarHidden(true)
         }
     }
 }

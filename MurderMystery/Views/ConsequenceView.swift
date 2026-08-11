@@ -42,6 +42,7 @@ struct ConsequenceView: View {
             .screenBackground("Secondary_Menu")
         }
         .navigationBarBackButtonHidden(true)
+        .statusBarHidden(true)
     }
 }
 
