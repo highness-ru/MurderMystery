@@ -101,7 +101,6 @@ Music and sound effects:
 - Add scene-specific background images
 - Add save/load system
 - Add more branching paths and additional endings
-- Expand the story with additional branching paths and endings
 - Add voiceover
 
 ## What I learned
