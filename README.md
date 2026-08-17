@@ -109,7 +109,7 @@ I have independently designed, built, tested and released an iOS app through Tes
 
 ## What I worked on independently
 
-This is my first personal iOS project built without step-by-step tutorial guidance. I planned the story structure, designed the investigation flow, wrote the plot, chose the atmosphere and music direction, and built the app screens in SwiftUI.
+I independently planned the story structure, designed the investigation flow, wrote the plot, chose the atmosphere and music direction, and built the app screens in SwiftUI.
 
 The project helped me practise turning an idea into a working iOS app, making product decisions, and thinking about player choices, state, and consequences.
 
