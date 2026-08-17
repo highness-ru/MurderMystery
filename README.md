@@ -106,7 +106,7 @@ Music and sound effects:
 
 ## What I learned
 
-I have independently designed, built, tested and released an iOS app through TestFlight and App Store Connect, taking it from initial concept to public release on the App Store. I am now familiar with Apple guidelines.
+I have independently designed, built, tested and released an iOS app through TestFlight and App Store Connect, taking it from initial concept to public release on the App Store. I also gained hands-on experience with Apple’s submission and review process.
 
 ## What I worked on independently
 
