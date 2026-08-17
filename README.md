@@ -10,6 +10,10 @@ The head of the Grey family has been found dead under suspicious circumstances. 
 
 Every scene presents the player with two choices. Each choice can reveal evidence, waste time, or lead the investigation in the wrong direction. The goal is to identify the killer before it is too late.
 
+## App Store release
+
+The app is now available on the App Store and can be downloaded for free using this link: https://apps.apple.com/gb/app/murder-mystery-dark-manor/id6800487173.
+
 ## Features
 
 - Branching text-based story
@@ -101,6 +105,9 @@ Music and sound effects:
 - Add voiceover
 
 ## What I learned
+
+I have independently designed, built, tested and released an iOS app through TestFlight and App Store Connect, taking it from initial concept to public release on the App Store. I am now familiar with Apple guidelines.
+
 ## What I worked on independently
 
 This is my first personal iOS project built without step-by-step tutorial guidance. I planned the story structure, designed the investigation flow, wrote the plot, chose the atmosphere and music direction, and built the app screens in SwiftUI.
