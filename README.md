@@ -8,11 +8,15 @@ The app is now available on the App Store and can be downloaded for free using t
 
 ## About the Game
 
-The player takes the role of a detective investigating a murder inside Grey House, an old mansion that was recently converted into a private hotel.
+The player takes the role of a detective investigating a murder inside Crawlford House, an old mansion that was recently converted into a private hotel.
 
-The head of the Grey family has been found dead under suspicious circumstances. The player must question suspects, examine clues, and find out who is responsible for the murder.
+The head of the Crawlford family has been found dead under suspicious circumstances. The player must question suspects, examine clues, and find out who is responsible for the murder.
 
 Every scene presents the player with two choices. Each choice can reveal evidence, waste time, or lead the investigation in the wrong direction. The goal is to identify the killer before it is too late.
+
+## Recording of the gameplay (spoilers below)
+
+https://github.com/user-attachments/assets/e69e3172-26f7-4bad-b0e8-a87eb6bce0e4
 
 ## Features
 
@@ -116,6 +120,6 @@ The project helped me practise turning an idea into a working iOS app, making pr
 
 ## Author
 
-Created by highness-ru
+Created by Alisa Shuginova
 
 GitHub: https://github.com/highness-ru
