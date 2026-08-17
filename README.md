@@ -1,6 +1,10 @@
-# Murder Mystery
+# Murder Mystery: Dark Manor
 
 Murder Mystery is a text-based detective visual novel built for iOS using Swift and SwiftUI.
+
+## App Store release
+
+The app is now available on the App Store and can be downloaded for free using this link: https://apps.apple.com/gb/app/murder-mystery-dark-manor/id6800487173.
 
 ## About the Game
 
@@ -9,10 +13,6 @@ The player takes the role of a detective investigating a murder inside Grey Hous
 The head of the Grey family has been found dead under suspicious circumstances. The player must question suspects, examine clues, and find out who is responsible for the murder.
 
 Every scene presents the player with two choices. Each choice can reveal evidence, waste time, or lead the investigation in the wrong direction. The goal is to identify the killer before it is too late.
-
-## App Store release
-
-The app is now available on the App Store and can be downloaded for free using this link: https://apps.apple.com/gb/app/murder-mystery-dark-manor/id6800487173.
 
 ## Features
 
@@ -101,7 +101,7 @@ Music and sound effects:
 - Add scene-specific background images
 - Add save/load system
 - Add more branching paths and additional endings
-- Work on the overall plot to make it more interesting and less rushed
+- Expand the story with additional branching paths and endings
 - Add voiceover
 
 ## What I learned
